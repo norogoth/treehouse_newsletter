@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
-<div class="user_inputs">
-    <input placeholder="name"/>
-    <input placeholder="email"/>
-</div>
-<button>Submit</button>
+<h2>Add a New User</h2>
+<form #addUser="ngForm" (ngSubmit)="postUser(addUser.value)" class="user_inputs">
+    <input name="name" placeholder="name" ngModel/>
+    <input name="name" placeholder="email" ngModel/>
+    <button>Submit</button>
+</form>

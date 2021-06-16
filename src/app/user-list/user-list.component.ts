@@ -31,26 +31,6 @@ export class UserListComponent implements OnInit {
     })
   }
 
-  postUser(name: string, email: string){
-    fetch(this.th_url+'/newsletter',{
-      method: 'POST',
-      headers: {
-       Authorization: environment.API_KEY, 
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email
-      })
-    })
-    .then( res => {
-      console.log('res:', res);
-      return res.json()
-    })
-    .then(json => {
-      this.user_list = json;
-      console.log(json);
-    })
-  }
 
   ngOnInit(): void {
     this.getUsers();
