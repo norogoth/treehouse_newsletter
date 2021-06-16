@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-list',
@@ -17,7 +18,7 @@ export class UserListComponent implements OnInit {
     fetch(this.th_url+'/newsletter',{
       method: 'GET',
       headers: {
-        
+       Authorization: environment.API_KEY, 
       },
     })
     .then( res => {
@@ -26,6 +27,28 @@ export class UserListComponent implements OnInit {
     })
     .then(json => {
       this.user_list = json;
+      console.log(json);
+    })
+  }
+
+  postUser(name: string, email: string){
+    fetch(this.th_url+'/newsletter',{
+      method: 'POST',
+      headers: {
+       Authorization: environment.API_KEY, 
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email
+      })
+    })
+    .then( res => {
+      console.log('res:', res);
+      return res.json()
+    })
+    .then(json => {
+      this.user_list = json;
+      console.log(json);
     })
   }
 
