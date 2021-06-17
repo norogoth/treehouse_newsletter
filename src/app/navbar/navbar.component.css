@@ -1,0 +1,27 @@
+:root {
+    --base-gray:  rgb(43, 43, 43);
+    --dark-gray: rgb(25,25,25);
+    --green: rgb(104, 199, 96);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    display: inline;
+}
+
+a:hover {
+    background-color: rgb(255, 248, 143);
+}
+
+li a {
+    display: block;
+    padding: 10px 10px;
+}
