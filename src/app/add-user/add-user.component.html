@@ -1,6 +1,7 @@
 <h2>Add a New User</h2>
 <form #addUser="ngForm" (ngSubmit)="postUser(addUser.value)" class="user_inputs">
-    <input name="name" placeholder="name" ngModel/>
-    <input name="email" placeholder="email" ngModel/>
+    <input ng-required="true" name="name" placeholder="name" ngModel/>
+    <input ng-required="true" name="email" placeholder="email" ngModel/>
+    <p *ngIf="invalid_entry">Both fields are required</p>
     <button>Submit</button>
 </form>

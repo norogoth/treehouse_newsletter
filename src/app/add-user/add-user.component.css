@@ -1,4 +1,19 @@
 .user_inputs {
     display: flex;
+    max-width: 300px;
+    margin: auto;
     flex-direction: column;
+}
+
+.user_inputs * {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+input {
+    border-radius: .75rem;
+}
+
+button {
+    background-color: rgb(104, 199, 96);
 }

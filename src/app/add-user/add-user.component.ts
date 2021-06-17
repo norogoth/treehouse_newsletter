@@ -9,8 +9,16 @@ import { environment } from 'src/environments/environment'
 export class AddUserComponent implements OnInit {
 
   th_url: string = 'https://treehousechallenge.contractornation.com';
+  invalid_entry: boolean = false;
 
   postUser(data: any){
+    if (data.name.length == 0 || data.email.length == 0) {
+      this.invalid_entry = true;
+      return;
+    }
+    else {
+      this.invalid_entry = false;
+    }
     fetch(this.th_url+'/newsletter',{
       method: 'POST',
       headers: {
